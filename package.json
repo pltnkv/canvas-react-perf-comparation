@@ -1,0 +1,31 @@
+{
+  "name": "canvas-perf-comparation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --config webpack/webpack.dev.js --watch",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "style": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@inlet/react-pixi": "^6.4.1",
+    "pixi.js": "^6.0.1",
+    "pixi.js-legacy": "^6.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "~3.8.3 ",
+    "webpack": "^4.44.1",
+    "webpack-cli": "~3.3.11",
+    "webpack-merge": "~4.2.2",
+    "copy-webpack-plugin": "^6.1.0"
+  }
+}

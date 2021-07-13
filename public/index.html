@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<style xmlns="http://www.w3.org/1999/html">
+    html,
+    body,
+    #root {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    #ui {
+        position: absolute;
+        background-color: #FFF;
+        padding: 10px;
+    }
+
+    #ui label {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    #ui-start {
+        padding: 10px;
+    }
+
+    #ui-start button {
+        height: 40px;
+    }
+
+    #ui-start label {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+
+</style>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Canvas perf comparation</title>
+    <script src="js/vendor.js"></script>
+    <script>
+		window.WebFontConfig = {
+			google: {
+				families: ['Snippet', 'Arvo:700italic', 'Podkova:700'],
+			},
+		};
+
+		/* eslint-disable */
+		// include the web-font loader script
+		(function () {
+			const wf = document.createElement('script');
+			wf.src = `${document.location.protocol === 'https:' ? 'https' : 'http'
+				}://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js`;
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			const s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		}());
+		/* eslint-enabled */
+    </script>
+</head>
+
+<body>
+<div id="ui-start">
+    <label>
+        Number of widgets:
+        <input id="widgets-number" type="number" value="50">
+    </label>
+    <label>
+        Render to Canvas:
+        <input id="use-canvas" type="checkbox">
+    </label>
+
+    <button id="plain-pixi-btn">Run plain pixi</button>
+    <button id="react-hooks-btn">Run react hooks</button>
+    <button id="react-classes-btn">Run react classes</button>
+</div>
+<div id="ui" style="display: none; margin-left: 200px">
+    <label>
+        <input type="radio" name="tool" value="move-container" checked="checked"/>
+        Move container
+    </label>
+    <label>
+        <input type="radio" name="tool" value="move-each-widget"/>
+        Move each widget
+    </label>
+
+    <br>
+    <button id="start-rotation-btn">start rotation</button>
+    <button id="stop-rotation-btn">stop rotation</button>
+</div>
+<div id="root"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
